@@ -6,22 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <style>
+    <!-- <style>
         .hide {
             display: none;
 
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <div id ="welcome">
         <h1>Welcome to my quiz game</h1>
         <p>A fancy welcome message</p>
-        <button>Start Quiz</button>
-
+        <div class = "content">
+        </div>
+        <button id="start">Start Quiz</button>
+<!-- //one component. -->
+<!-- //one component. -->
     </div>
+
+    <div><p id="timerId"></p></div>
+    <div><p id="messageId"></p></div>
+    
     <!--Add the click to the div-->
-    <div class= "item1" id="questions">
+    <div class= "hidden" id="questions">
         <h2>What's your favorite color?</h2>
         <!--Add the click to the button-->
         <button data-answer="Yellow">Yellow</button>
@@ -30,7 +37,7 @@
         <button data-answer="Pink">Pink</button>
     </div>
 
-    <div class= "item2" id="questions2">
+    <div class= "hidden" id="questions2">
         <h2>What's your favorite food?</h2>
         <!--Add the click to the button-->
         <button data-answer="Cake">Cake</button>
@@ -39,7 +46,7 @@
         <button data-answer="Burgers">Burgers</button>
     </div> 
 
-    <div class= "item3" id="questions3">
+    <div class= "hidden" id="questions3">
         <h2>What's your favorite sport?</h2>
         <!--Add the click to the button-->
         <button data-answer="Basketball">Basketball</button>
@@ -48,7 +55,7 @@
         <button data-answer="Football">Football</button>
     </div> 
 
-    <div class= "item4" id="questions4">
+    <div class= "hidden" id="questions4">
         <h2>What's your favorite animal?</h2>
         <!--Add the click to the button-->
         <button data-answer="Dolphin">Dolphin</button>
@@ -56,6 +63,7 @@
         <button data-answer="Cat">Cat</button>
         <button data-answer="Skunk">Skunk</button>
     </div> 
+
 
     <script src="game.js"></script>
 </body>

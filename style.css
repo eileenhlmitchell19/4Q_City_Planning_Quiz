@@ -1,20 +1,39 @@
-.item1 {
+#welcome {
+    /*display: block;*/
+    margin: 60px auto;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,2);
+    transition: 0.3s;
+    width: 40vw;
+    background-color: #F4F4F8;
+    padding: 20px;
+}
+
+#questions {
     width: 50%;
     background-color:#48b4ef;
 }
 
-.item2 {
+#questions2 {
     width: 50%;
     background-color:#48b4ef;
 }
 
-.item3 {
+#questions3 {
     width: 50%;
     background-color:#48b4ef;
 }
 
-.item4 {
+#questions4 {
     width: 50%;
     background-color:#48b4ef;
 }
+/* 
+.content {
 
+} */
+
+.hidden {
+    display: none;
+}
