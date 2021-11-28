@@ -62,8 +62,10 @@ let welcome = document.getElementById('welcome');
 // --------------------------------------------------------
 // --- START GAME,----
 let startButtonElement = document.getElementById("start");
-    
-startButtonElement.addEventListener("click", startQuiz);   
+startButtonElement.addEventListener("click", startQuiz); 
+
+let initialButtonElement = document.getElementById("initialButton");
+initialButtonElement.addEventListener("click", saveInitials);     
 
 for(var index = 0;index < questionElements.length;index++) {
     questionElements[index].addEventListener('click', answerQuestion );
@@ -96,11 +98,12 @@ function startTimer() {
 
 function endQuiz(message) {
     clearInterval(quizTimer);
-    let endMessage = message + " Your score is: " + currentScore;
-    // alert(endMessage);
-    timerId.innerHTML = endMessage;
+    
+    timerId.innerHTML = message;
     hideAllQuestions();
     messageId.classList.add('hidden');
+    let saveDivElement = document.getElementById("saveDiv")
+    saveDivElement.classList.remove('hidden');
 }
 
 function answerQuestion(event) {
@@ -124,9 +127,6 @@ function answerQuestion(event) {
         totalAllowedQuizTimeInSeconds = totalAllowedQuizTimeInSeconds - 10;
         messageId.innerHTML = selectedAnswer + " is wrong answer. Try again.";
     }
-    //IF we have no questions left, we end the game
-    //THEN we end the game
-    //ELSE
 }
 
 function hideQuestion(questionIndex){
@@ -145,41 +145,10 @@ function hideAllQuestions() {
     }
 }
 
+function saveInitials() {
+    let initialsElement = document.getElementById("initials");
+    let timerIdElement = document.getElementById("timerId");
+    timerIdElement.innerHTML = "Hello " + initialsElement.value + ". Your score is " + currentScore;
 
+}
 
-// function startGame() {
-//     count = 10;
-//     questionIndex = 0;
-//     document.getElementById("welcome").style.display = "none";
-//     document.getElementById("timer").innerHTML = count;
-//     makeQuiz();
-    
-// }
-
-// function makeQuiz() {
-//     quizBox.style.display = "block";
-//     var currentQuestion = quizQuestion = quizQuestions[QuestionIndex];
-//     correctAnswer = currentQuestion.correctAnswer;
-//     displayCurrentQuestion();
-// }
-
-// function displayCurrentQuestion() {
-//     var currentQuestion = question(0)[QuestionIndex];
-//     var questionEl = document.createElement("div");
-//     questionEl.textContent = currentQuestion.question;
-//     quizBox.appendChild(questionEl);
-// }
-
-//create a for loop for each question answer
-
-//when you click the start button, then the empty start button is read?
-// function emptyStartBox() {
-//     emptyStartBox.innerHTML = "";
-//     document.querySelector("#button").style.display="none";
-// }
-
-// startButton.addEventListener("click", emptyStartBox)
-
-// function startButton() {
-//     startButton.addEventListener('click', startButton);
-// }
