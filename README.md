@@ -13,6 +13,8 @@ This website allows users to take a timed multiple choice quiz about City Planni
 
 Remember, if you choose incorrectly on any question, you will be prompted to choose another question and you will have 10 seconds deducted, so choose wisely!
 
+Types of 
+
 Known Bugs
 - Text input for initials at end of game does not currently dissappear once they have been entered.
 - HTML code has been written for individual elements. This should eventually be rewritten in one component so that many elements can be added with less effort on the developers part. 
@@ -23,6 +25,6 @@ Links
 - [style.css](./style.css)
 
 Screen Shots
-![Project connection](Quiz1.jpg)
-![Project connection](quiz3.jpg)
-![Project connection](quiz2.jpg)
+![Project connection](quiz1.1.jpg)
+![Project connection](quiz1.2.jpg)
+![Project connection](quiz1.3.jpg)

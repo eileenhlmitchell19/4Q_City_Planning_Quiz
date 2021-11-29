@@ -20,9 +20,9 @@
 }
 
 .button1{
-    margin: 0px auto;
+    margin: 40px auto;
     width: 40vw;
-    height: 10vw;
+    height: 8vw;
     display:block; 
 }
 
@@ -38,10 +38,11 @@
 }
 
 .button2 {
-    margin: 0px auto;
+    margin: 40px auto;
     width: 40vw;
-    height: 10vw;
+    height: 8vw;
     display:block;
+    
 }
 
 #questions2 > button:hover {
@@ -57,9 +58,9 @@
 }
 
 .button3 {
-    margin: 0px auto;
+    margin: 40px auto;
     width: 40vw;
-    height: 10vw;
+    height: 8vw;
     display:block;
 }
 
@@ -76,9 +77,9 @@
 }
 
 .button4 {
-    margin: 0px auto;
+    margin: 40px auto;
     width: 40vw;
-    height: 10vw;
+    height: 8vw;
     display:block;
 }
 
@@ -93,7 +94,10 @@
 }
 
 h2 {
+    
     text-align: center;
+    color: white;
+    
 }
 
 #saveDiv {
@@ -102,4 +106,15 @@ h2 {
 
 #welcome > p {
     font-family:'Stalemate', cursive;
+}
+
+body {
+    background-image:url(planning2.jpg);
+    background-size: cover;
+    background-attachment:fixed;
+    
+}
+
+label {
+    color: white;
 }
