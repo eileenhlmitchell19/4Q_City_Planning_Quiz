@@ -1,39 +1,105 @@
+/* WELCOME BOX */
 #welcome {
     /*display: block;*/
+    border-radius: 25px;
     margin: 60px auto;
     text-align: center;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
     transition: 0.3s;
-    width: 40vw;
-    background-color: #F4F4F8;
+    width: 50vw;
+    background-color: #DEB887;
     padding: 20px;
+    
 }
 
+/* QUESTION 1 */
 #questions {
-    width: 50%;
-    background-color:#48b4ef;
+    width: 100vw;
+    
 }
 
+.button1{
+    margin: 0px auto;
+    width: 40vw;
+    height: 10vw;
+    display:block; 
+}
+
+#questions > button:hover {
+        background-color: yellow;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
+}
+
+/* QUESTION 2 */
 #questions2 {
-    width: 50%;
-    background-color:#48b4ef;
+    width: 100vw;
+    
 }
 
+.button2 {
+    margin: 0px auto;
+    width: 40vw;
+    height: 10vw;
+    display:block;
+}
+
+#questions2 > button:hover {
+    background-color: yellow;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
+}
+
+
+/* QUESTION 3 */
 #questions3 {
-    width: 50%;
-    background-color:#48b4ef;
+    width: 100vw;
+    
 }
 
+.button3 {
+    margin: 0px auto;
+    width: 40vw;
+    height: 10vw;
+    display:block;
+}
+
+#questions3 > button:hover {
+    background-color: yellow;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
+}
+
+
+/* QUESTION 4 */
 #questions4 {
-    width: 50%;
-    background-color:#48b4ef;
+    width: 100vw;
+    
 }
-/* 
-.content {
 
-} */
+.button4 {
+    margin: 0px auto;
+    width: 40vw;
+    height: 10vw;
+    display:block;
+}
 
+#questions4 > button:hover {
+    background-color: yellow;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
+}
+
+/* HIDDEN */
 .hidden {
     display: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+#saveDiv {
+    text-align: center;
+}
+
+#welcome > p {
+    font-family:'Stalemate', cursive;
 }

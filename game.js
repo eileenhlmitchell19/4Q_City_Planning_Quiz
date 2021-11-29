@@ -1,3 +1,4 @@
+//VARIABLES-------------------------------------
 let question1 = document.getElementById('questions');
 let question2 = document.getElementById('questions2');
 let question3 = document.getElementById('questions3');
@@ -5,72 +6,76 @@ let question4 = document.getElementById('questions4');
 var questionElements = [question1, question2, question3, question4];
 
 let messageId = document.getElementById('messageId');
-var questions = [
-    {
-        question: "What's your favorite color?",
-        MultipleChoiceOptions: [
-        "Yellow",
-        "Green",
-        "Blue",
-        "Pink"
-    ],
-    correctAnswer: "Green"
-    },
-    {
-        question: "What's your favorite food?",
-        MultipleChoiceOptions: [
-        "Cake",
-        "Cookies",
-        "Pasta",
-        "Burgers"
-    ],
-    correctAnswer: "Pasta"
-    },
-    {
-        question: "What's your favorite sport?",
-        MultipleChoiceOptions: [
-        "Basketball",
-        "Volleyball",
-        "Track",
-        "Football"
-    ],
-    correctAnswer: "Basketball"
-    },
-    {
-        question: "What's your favorite animal?",
-        MultipleChoiceOptions: [
-        "Dolphin",
-        "Doggo",
-        "Cat",
-        "Skunk"
-    ],
-    correctAnswer: "Doggo"
-    }
-];
 
 let quizTimer;
 let totalAllowedQuizTimeInSeconds = 60;
 let currentQuestionIndex = 0;
 let currentScore = 0;
 let welcome = document.getElementById('welcome');
+let totalScore = 40;
 
-// --------------------------------------------------------
-    // --- START QUIZ FUNCTION----
-//hide, display, display contentq1
-// startQuiz.textContent = "Start"
+var questions = [
+    {
+        question: "What does GIS Stand for?",
+        MultipleChoiceOptions: [
+        "Geographic Information Software",
+        "Geographic Information Systems",
+        "Geographic Interpretational Solutions",
+        "Geologic Interpolation Sinking"
+    ],
+    correctAnswer: "Geographic Information Systems"
+    },
+    {
+        question: "Who is an american activist and urbanist who led the way to community based planning practices and philosophies?",
+        MultipleChoiceOptions: [
+        "Le Corbusier",
+        "David Hasselhoff",
+        "Jane Jacobs",
+        "Frank Lloyd Wright"
+    ],
+    correctAnswer: "Jane Jacobs"
+    },
+    {
+        question: "What agency maintains the National Flood Insurance Program?",
+        MultipleChoiceOptions: [
+        "FEMA",
+        "EPA",
+        "WSDOT",
+        "WHO"
+    ],
+    correctAnswer: "FEMA"
+    },
+    {
+        question: "In the Township, Section, Range model, how many sections are there and what size are they?",
+        MultipleChoiceOptions: [
+        "16 Sections, 600 square feet",
+        "36 Sections, 1 mile",
+        "20 Sections, 2 miles",
+        "5 Sections, 1/2 mile"
+    ],
+    correctAnswer: "36 Sections, 1 mile"
+    }
+];
+//-----------------------------------------
 
-// --------------------------------------------------------
-// --- START GAME,----
+
+// --- START BUTTON ON CLICK---------------
 let startButtonElement = document.getElementById("start");
 startButtonElement.addEventListener("click", startQuiz); 
+//-----------------------------------------
 
+
+// --- INITIALS BUTTON ON CLICK------------
 let initialButtonElement = document.getElementById("initialButton");
 initialButtonElement.addEventListener("click", saveInitials);     
 
 for(var index = 0;index < questionElements.length;index++) {
     questionElements[index].addEventListener('click', answerQuestion );
 }
-    
+//------------------------------------------
+
+
+// --- START QUIZ QUESTIONS & TIMER---------
 function startQuiz(){
     startTimer();
 
@@ -80,22 +85,26 @@ function startQuiz(){
     // Hide welcome message and start Quiz button.
     welcome.classList.add('hidden'); 
 }
+//-------------------------------------------
 
+
+
+// --- START TIMER FUNCTION -----------------
 function startTimer() {
-    // alert("s: " + totalAllowedQuizTimeInSeconds);
 // Update the count down every 1 second
     quizTimer = setInterval(function() {
     totalAllowedQuizTimeInSeconds = totalAllowedQuizTimeInSeconds - 1;
-    // alert("totalAllowedQuizTimeInSeconds: " + totalAllowedQuizTimeInSeconds);
     let timerId = document.getElementById("timerId");
     timerId.innerHTML = "Time Remaining: " + totalAllowedQuizTimeInSeconds;
-    // If the count down is over, write some text 
     if (totalAllowedQuizTimeInSeconds < 0) {
         endQuiz("Time Finished.");
     }
 }, 1000);
 }
+//-------------------------------------------
 
+
+// --- END QUIZ FUNCTION --------------------
 function endQuiz(message) {
     clearInterval(quizTimer);
     
@@ -105,30 +114,34 @@ function endQuiz(message) {
     let saveDivElement = document.getElementById("saveDiv")
     saveDivElement.classList.remove('hidden');
 }
+//-------------------------------------------
 
+
+// --- ANSWER QUESTION FUNCTION -------------
 function answerQuestion(event) {
     
-    // Which answer the choice (which button)
     var selectedAnswer = event.target.dataset.answer;
-    
-    // Compare `answer` to the "current question" answer
-    // var currentQuestion = questions[currentQuestionIndex];
+    //if you get the correct answer, you get +10 points
     if( selectedAnswer === questions[currentQuestionIndex].correctAnswer ) {
-        // Answer is right
         messageId.innerHTML = selectedAnswer + " is the right answer.";
         hideQuestion(currentQuestionIndex);
         currentScore = currentScore + 10;
         let isLastQuestion = (currentQuestionIndex == questions.length - 1);
+       //end the quiz if you run out of questions
         if(isLastQuestion) {
             endQuiz("You completed Quiz in time.");
         }
         currentQuestionIndex = currentQuestionIndex + 1;
     } else {
+        //if you get the wrong answer, -10 seconds from the clock but no point deduction
         totalAllowedQuizTimeInSeconds = totalAllowedQuizTimeInSeconds - 10;
         messageId.innerHTML = selectedAnswer + " is wrong answer. Try again.";
     }
 }
+//-------------------------------------------
 
+
+// --- HIDE QUESTION FUNCTION -------------
 function hideQuestion(questionIndex){
 
     let lastIndex = questions.length - 1;
@@ -138,17 +151,23 @@ function hideQuestion(questionIndex){
         questionElements[questionIndex+1].classList.remove('hidden');
     }
 }
+//-------------------------------------------
 
+
+// --- HIDE ALL QUESTIONS FUNCTION ----------
 function hideAllQuestions() {
     for(var index = 0;index < questionElements.length;index++) {
         hideQuestion(index);
     }
 }
+//-------------------------------------------
 
+
+// --- SAVE INITIALS and SCORE FUNCTION -----
 function saveInitials() {
     let initialsElement = document.getElementById("initials");
     let timerIdElement = document.getElementById("timerId");
-    timerIdElement.innerHTML = "Hello " + initialsElement.value + ". Your score is " + currentScore;
+    timerIdElement.innerHTML = "Hello " + initialsElement.value + ". Your score is " + currentScore + " out of " + totalScore;
 
 }
-
+//-------------------------------------------

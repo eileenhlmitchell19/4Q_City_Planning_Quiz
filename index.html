@@ -6,69 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <!-- <style>
-        .hide {
-            display: none;
-
-        }
-    </style> -->
 </head>
 <body>
+    <!--WELCOME PAGE-->
     <div id ="welcome">
-        <h1>Welcome to my quiz game</h1>
-        <p>A fancy welcome message</p>
+        <h1>A Short Planning Quiz</h1>
+        <p>What do you know about City Planning?</p>
         <div class = "content">
         </div>
         <button id="start">Start Quiz</button>
-<!-- //one component. -->
-<!-- //one component. -->
     </div>
 
     <div><p id="timerId"></p></div>
     <div><p id="messageId"></p></div>
     
-    <!--Add the click to the div-->
+  <!-- QUESTION 1 -->
     <div class= "hidden" id="questions">
-        <h2>What's your favorite color?</h2>
-        <!--Add the click to the button-->
-        <button data-answer="Yellow">Yellow</button>
-        <button data-answer="Green">Green</button>
-        <button data-answer="Blue">Blue</button>
-        <button data-answer="Pink">Pink</button>
+        <h2>What does GIS Stand for?</h2>
+        <button class= "button1" data-answer="Geographic Information Software">Geographic Information Software</button>
+        <button class= "button1" data-answer="Geographic Information Systems">Geographic Information Systems</button>
+        <button class= "button1" data-answer="Geographic Interpretational Solutions">Geographic Interpretational Solutions</button>
+        <button class= "button1" data-answer="Geologic Interpolation Sinking">Geologic Interpolation Sinking</button>
     </div>
 
+    <!--QUESTION 2-->
     <div class= "hidden" id="questions2">
-        <h2>What's your favorite food?</h2>
-        <!--Add the click to the button-->
-        <button data-answer="Cake">Cake</button>
-        <button data-answer="Cookies">Cookies</button>
-        <button data-answer="Pasta">Pasta</button>
-        <button data-answer="Burgers">Burgers</button>
+        <h2>Who is an american activist and urbanist who led the way to community based planning practices and philosophies?</h2>
+        <button class= "button2" data-answer="Le Corbusier">Le Corbusier</button>
+        <button class= "button2" data-answer="David Hasselhoff">David Hasselhoff</button>
+        <button class= "button2" data-answer="Jane Jacobs">Jane Jacobs</button>
+        <button class= "button2" data-answer="Frank Lloyd Wright">Frank Lloyd Wright</button>
     </div> 
 
+    <!--QUESTION 3-->
     <div class= "hidden" id="questions3">
-        <h2>What's your favorite sport?</h2>
-        <!--Add the click to the button-->
-        <button data-answer="Basketball">Basketball</button>
-        <button data-answer="Volleyball">Volleyball</button>
-        <button data-answer="Track">Track</button>
-        <button data-answer="Football">Football</button>
+        <h2>What agency maintains the National Flood Insurance Program?</h2>
+        <button class= "button3" data-answer="FEMA">FEMA</button>
+        <button class= "button3" data-answer="EPA">EPA</button>
+        <button class= "button3" data-answer="WSDOT">WSDOT</button>
+        <button class= "button3" data-answer="WHO">WHO</button>
     </div> 
 
+    <!--QUESTION 4-->
     <div class= "hidden" id="questions4">
-        <h2>What's your favorite animal?</h2>
-        <!--Add the click to the button-->
-        <button data-answer="Dolphin">Dolphin</button>
-        <button data-answer="Doggo">Doggo</button>
-        <button data-answer="Cat">Cat</button>
-        <button data-answer="Skunk">Skunk</button>
+        <h2>In the Township, Section, Range model, how many sections are there and what size are they?</h2>
+        <button class= "button4" data-answer="16 Sections, 600 square feet">16 Sections, 600 square feet</button>
+        <button class= "button4" data-answer="36 Sections, 1 mile">36 Sections, 1 mile</button>
+        <button class= "button4" data-answer="20 Sections, 2 miles">20 Sections, 2 miles</button>
+        <button class= "button4" data-answer="5 Sections, 1/2 mile">5 Sections, 1/2 mile</button>
     </div> 
 
+    <!--SAVE INITIALS AND DISPLAY SCORE PAGE-->
     <div class= "hidden" id="saveDiv">
         <h2>Wanna save that? Enter your initials here.</h2>
         <label for="initials">Initials:</label>
         <input type="text" id="initials" name="initials"><br><br>
-        <!--Add the click to the button-->
         <button id=initialButton>Save</button>
 
     </div> 
