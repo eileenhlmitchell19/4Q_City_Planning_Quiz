@@ -17,6 +17,12 @@ Known Bugs
 - Text input for initials at end of game does not currently dissappear once they have been entered.
 - HTML code has been written for individual elements. This should eventually be rewritten in one component so that many elements can be added with less effort on the developers part. 
 
+Links
+- [index.html](./game.js)
+- [game.js](./index.html)
+- [style.css](./style.css)
+
+Screen Shots
 ![Project connection](Quiz1.jpg)
 ![Project connection](quiz3.jpg)
 ![Project connection](quiz2.jpg)
