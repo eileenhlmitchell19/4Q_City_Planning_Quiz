@@ -118,3 +118,9 @@ body {
 label {
     color: white;
 }
+
+.message-cls{
+    color: yellow;
+    font-size: large;
+    text-align: center;
+}
